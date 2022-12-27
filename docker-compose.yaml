@@ -1,0 +1,12 @@
+ apache2:
+        build : apache2
+        container_name: apache2
+        volumes:
+              - "/etc/timezone:/etc/timezone:ro"
+              - "/etc/localtime:/etc/localtime:ro"
+              - "/dev/shm:/dev/shm"
+        ports:
+              - "8080:80"
+        restart : always       
+        networks: 
+            - appops-dev
